@@ -1,4 +1,4 @@
 # Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр.
 
 print('Сумма =', sum(
-    map(int, list(filter(lambda x: x.isdigit(), input('Введите число: '))))))
+    map(lambda x: int(x) if x.isdigit() else 0, input('Введите число: '))))))
