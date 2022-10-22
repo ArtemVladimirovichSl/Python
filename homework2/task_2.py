@@ -3,7 +3,7 @@
 num = int(input("Введите число: "))
 
 lst = [1]
-for i in range(1, num + 1):
-    lst.append(i * lst[- 1])
+for i in range(2, num + 1):
+    lst.append(i * lst[-1])
 
-print(f"Набор произведений чисел от 1 до {num}:  {lst[1:]}")
+print(f"Набор произведений чисел от 1 до {num}:  {lst}")
