@@ -14,8 +14,7 @@ def rnd(): return random.randint(0, 101)          # создание случа�
 
 
 def create_mn(k):                                 # создание коофициентов
-    lst = [rnd() for i in range(k+1)]
-    return lst
+    return [rnd() for i in range(k+1)]
 
 
 def create_str(sp):                              # создание многочлена в виде строки
