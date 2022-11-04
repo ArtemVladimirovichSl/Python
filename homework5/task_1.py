@@ -8,9 +8,8 @@ lst = []
 for i in (text):
     if 'а' not in i or 'б' not in i or 'в' not in i:
         lst.append(i)
-    else:
-        elem = list(i)
-        for j in (elem [-1]):
+    else: 
+        for j in (list(i) [-1]):
             if j in string.punctuation:
                 lst.append(j)
 
