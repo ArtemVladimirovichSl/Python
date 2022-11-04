@@ -34,23 +34,21 @@ player2 = input("Введите имя второго игрока: ")
 if player1 == player2:
     print('Измените одно имя, иначе мы запутаемся')
 else:
-    print('Бросим жребий на право первого хода. Орёл или решка?')
-    draw1 = input(f'{player1}: ')
-    draw2 = input(f'{player2}: ')
-    if draw1 != draw2:
-        if draw1.lower() == 'орёл' or draw1.lower() == 'решка':
-            if draw2.lower() == 'орёл' or draw2.lower() == 'решка':
-                flag = randint(1, 2)
-                if flag == 1:
-                    print(f"Выпало {draw1}, первый ходит {player1}")
-                else:
-                    print(f"Выпало {draw2}, первый ходит {player2}")
-            else:
-                print(f'{player2}, будьте внимательнее при вводе')
+    draw1 = input(
+        f'Бросим жребий на право первого хода. \n{player1}, введите \"орёл\" или \"решка\": ')
+    if draw1.lower() == 'орёл' or draw1.lower() == 'орел' or draw1.lower() == 'решка':
+        if draw1.lower() == 'орёл' or draw1.lower() == 'орел':
+            draw2 = 'решка'
+        elif draw1.lower() == 'решка':
+            draw2 = 'орёл'
+        print(f'Тогда у {player2} {draw2}')
+        flag = randint(1, 2)
+        if flag == 1:
+            print(f"Выпало {draw1}, первый ходит {player1}")
         else:
-            print(f'{player1}, будьте внимательнее при вводе')
+            print(f"Выпало {draw2}, первый ходит {player2}")
     else:
-        print('Некорректный ввод, попробуйте ещё раз')
+        print(f'{player1}, будьте внимательнее при вводе')
 
 counter1 = 0
 counter2 = 0
