@@ -65,7 +65,7 @@ while value > 0:
             value -= k
             flag = False
             if value > 0:
-                p_print(player1, k, counter1, value)
+                p_print(k, counter1, value)
             else:
                 print(
                     f"Вы взяли {k}, теперь у Вас {counter1}. На столе больше не осталось конфет.")
