@@ -3,22 +3,18 @@
 
 with open('RLE_encoded.txt', 'r') as file:
     my_text = file.read()
+text = ''.join(my_text)
 
 
-def decoding_rle(ss: str):
-    count = ''
+def decoding_rle(text):
     str_decode = ''
-    for char in ss:
-        if char.isdigit():
-            count += char
-        else:
-            str_decode += char * int(count)
-            count = ''
+    for i in range(0, len(text), 2):
+        str_decode += text[i + 1] * int(text[i])
     return str_decode
 
 
-str_decode = decoding_rle(my_text)
-file = open('RLE_decoded.txt', 'w')
-file.write(str_decode)
+str_decode = decoding_rle(text)
+file = open('RLE_decoded.txt', 'w').write(str_decode)
+
 print(f'Данные из файла: {my_text}\n\
 Восстановленные данные: {str_decode}')
