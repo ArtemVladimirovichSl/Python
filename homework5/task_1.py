@@ -5,11 +5,12 @@ import string
 text = input('Введите текст: ').split()
 
 lst = []
-for i in text:
-    if not ('а' in i and 'б' in i and 'в' in i):
-        lst.append(i)
-    else: 
-        for j in (list(i) [-1]):
+for word in text:
+    w = word.lower()
+    if not ('а' in w and 'б' in w and 'в' in w):
+        lst.append(word)
+    else:
+        for j in (list(w) [-1]):
             if j in string.punctuation:
                 lst.append(j)
 
